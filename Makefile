@@ -37,16 +37,14 @@ usage:
 linux: stow config
 
 link:
-	ln -fs $(DOTFILES_DIR)/bash/.aliases $(HOME)/.aliases
-	ln -fs $(DOTFILES_DIR)/bash/.bash_profile $(HOME)/.bash_profile
+	ln -fs $(DOTFILES_DIR)/bash/.bash $(HOME)/.bash
 	ln -fs $(DOTFILES_DIR)/bash/.bashrc $(HOME)/.bashrc
 	ln -fs $(DOTFILES_DIR)/git/.gitconfig $(HOME)/.gitconfig
 	ln -fs $(DOTFILES_DIR)/tmux/.tmux.conf $(HOME)/.tmux.conf
 	ln -fs $(DOTFILES_DIR)/vim/.vimrc $(HOME)/.vimrc
 
 unlink:
-	unlink $(HOME)/.aliases
-	unlink $(HOME)/.bash_profile
+	unlink $(HOME)/.bash
 	unlink $(HOME)/.bashrc
 	unlink $(HOME)/.gitconfig
 	unlink $(HOME)/.tmux.conf

@@ -10,14 +10,41 @@
 [push]
 	default = simple
 [alias]
-	bv = branch -v
-	co = checkout
-	cg = checkout -b
-	cm = checkout master
-	d = diff
-	lg = log --graph --abbrev-commit --decorate --date=relative --all
-	p = pull
-	resethard = reset --hard origin/master
-	st = status
+	# commit
+	ci = commit
+	amend = commit --amend
+	ammend = commit --amend
+
+	# diff
+	last = diff HEAD^                 # diff last committed change
+
+	# log
+	l = log --graph --decorate=short
+	all = log --graph --decorate=short --all
+	changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+	short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
+	simple = log --pretty=format:\" * %s\"
+	shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+
+	# rebase
+	rc = rebase --continue            # continue rebase
+	rs = rebase --skip                # skip rebase
+
+	# reset
+	reset-hard = reset --hard origin/master
+
+	# status
+	s = status                        # status
+	st = status                       # status
+	stat = status                     # status
+
+	# http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
+	recent-branches = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+
+	# via http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
+	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+	snapshots = !git stash list --grep snapshot
+[diff]
+	algorithm = patience
 [include]
 	path = ~/.gitconfig_local

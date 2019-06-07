@@ -28,7 +28,7 @@ set softtabstop=4
 set tabstop=4
 
 " Pathogen stuff: https://github.com/tpope/vim-pathogen
-execute pathogen#infect()
+"execute pathogen#infect()
 filetype plugin indent on
 
 " http://unix.stackexchange.com/questions/63196/in-vim-how-can-i-automatically-determine-whether-to-use-spaces-or-tabs-for-inde
