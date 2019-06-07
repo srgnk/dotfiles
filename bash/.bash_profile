@@ -65,6 +65,7 @@ bind '"\e[B": history-search-forward'
 [[ $- == *i* ]] && stty erase ^?
 
 [[ -e "$HOME/.aliases" ]] && source "$HOME/.aliases"
+[[ -e "$HOME/.bash_functions" ]] && source "$HOME/.bash_functions"
 [[ -e "$HOME/.bashrc_local" ]] && source "$HOME/.bashrc_local"
 
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
