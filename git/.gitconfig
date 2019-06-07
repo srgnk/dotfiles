@@ -1,0 +1,23 @@
+[user]
+	name = Sergey Nemov
+	email = sergey.n.nemov@gmail.com
+[http]
+	sslVerify = false
+[color]
+	ui = auto
+[core]
+	autocrlf = input
+[push]
+	default = simple
+[alias]
+	bv = branch -v
+	co = checkout
+	cg = checkout -b
+	cm = checkout master
+	d = diff
+	lg = log --graph --abbrev-commit --decorate --date=relative --all
+	p = pull
+	resethard = reset --hard origin/master
+	st = status
+[include]
+	path = ~/.gitconfig_local
