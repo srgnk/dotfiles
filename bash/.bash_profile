@@ -64,7 +64,7 @@ bind '"\e[B": history-search-forward'
 # fix the annoying bug with backspace while editing in VIM
 [[ $- == *i* ]] && stty erase ^?
 
-[[ -e "$HOME/.aliases" ]] && source "$HOME/.aliases"
+[[ -e "$HOME/.bash_aliases" ]] && source "$HOME/.bash_aliases"
 [[ -e "$HOME/.bash_functions" ]] && source "$HOME/.bash_functions"
 [[ -e "$HOME/.bashrc_local" ]] && source "$HOME/.bashrc_local"
 
