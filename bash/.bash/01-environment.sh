@@ -10,16 +10,10 @@ export CLICOLOR=1
 # Allow ANSI "color" escape sequences for less
 export LESS="-R"
 
-# Case-insensitive globbing (used in pathname expansion)
-shopt -s nocaseglob
-# Turn on extended globbing
-shopt -s extglob
-
-# Autocorrect typos in path names when using `cd`
-shopt -s cdspell
-
-# Check the window size after each command, and update LINES and COLUMNS if the size has changed
-shopt -s checkwinsize
+shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
+shopt -s extglob        # Turn on extended globbing
+shopt -s cdspell        # Autocorrect typos in path names when using `cd`
+shopt -s checkwinsize   # Check the window size after each command, and update LINES and COLUMNS if the size has changed
 
 # fix the annoying bug with backspace while editing in VIM
 [[ $- == *i* ]] && stty erase ^?

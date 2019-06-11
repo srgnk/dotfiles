@@ -1,5 +1,5 @@
 # dotfiles
-alias reload_bashrc='. ~/.bashrc'
+alias rebash='. ~/.bashrc'
 
 # navigation
 alias ..='cd ..'
