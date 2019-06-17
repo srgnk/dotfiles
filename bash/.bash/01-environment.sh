@@ -19,6 +19,6 @@ shopt -s checkwinsize   # Check the window size after each command, and update L
 [[ $- == *i* ]] && stty erase ^?
 
 # SSH auto-completion based on entries in known_hosts.
-if [[ -e ~/.ssh/known_hosts ]]; then
+if [[ -f ~/.ssh/known_hosts ]]; then
 	complete -o default -W "$(cat ~/.ssh/known_hosts | sed 's/[, ].*//' | sort | uniq | grep -v '[0-9]')" ssh scp sftp
 fi
