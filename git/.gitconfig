@@ -25,6 +25,7 @@
 	short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
 	simple = log --pretty=format:\" * %s\"
 	shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+	history = log -p
 
 	# rebase
 	rc = rebase --continue            # continue rebase

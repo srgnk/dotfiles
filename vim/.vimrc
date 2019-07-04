@@ -14,6 +14,8 @@ set scrolloff=7
 
 set hidden
 
+set shell=bash\ --login
+
 set autoindent
 
 syntax on
