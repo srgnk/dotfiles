@@ -29,3 +29,6 @@ alias gp='git pull'
 alias gl='git l'
 alias gbv='git branch -v'
 alias gd='git diff'
+
+# vim
+alias invim='env | grep vim'
