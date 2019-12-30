@@ -33,6 +33,7 @@
 
 	# reset
 	reset-hard = reset --hard origin/master
+	unstage = reset --
 
 	# submodules
 	submodules-reset = submodule update --init
