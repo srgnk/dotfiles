@@ -20,6 +20,9 @@ alias grep='grep --color=auto'
 # apt
 alias sapt='sudo apt'
 
+# du
+alias du_largest='du -sh -- * | sort -h'
+
 # git aliases
 alias gcm='git checkout master'
 alias gcb='git checkout -b'
