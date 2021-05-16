@@ -34,3 +34,15 @@ alias gd='git diff'
 
 # vim
 alias invim='env | grep vim'
+
+# python aliases
+alias pip-reinstall='pip3 install --force-reinstall -r ../requirements/local.txt'
+alias pip-upgrade-pip='python -m pip install --upgrade pip'
+
+# django aliases
+alias manage='python manage.py'
+alias manage-makemigrations='python manage.py makemigrations'
+alias manage-migrate='python manage.py migrate'
+alias manage-test='python manage.py test'
+alias manage-test-full='SUITE=FULL python manage.py test'
+alias manage-runserver='python manage.py runserver'
