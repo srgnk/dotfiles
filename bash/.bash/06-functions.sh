@@ -56,3 +56,17 @@ function scptar_get {
 
     ssh $host "tar -cf - $file" | tar -xvf -
 }
+
+# this function restarts the Internet card, required by Tunnelblick to work when switching WiFi
+function restart-internet-card {
+    sudo ifconfig en0 down
+    sudo route flush
+    sudo ifconfig en0 up
+}
+
+function ansible-vault-decrypt {
+    [[ -z "$1" ]] && echo "usage: $0 <file_to_decrypt>" && return 1
+    [[ ! -f '~/.vault_pass' ]] && echo '~/.vault_pass does not exist' && return 1
+
+    ansible-vault decrypt --vault-password-file ~/.vault_pass "$1"
+}
