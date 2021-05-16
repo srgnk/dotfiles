@@ -8,7 +8,6 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 # ls
-alias ls='ls --color=auto'
 alias la='ls -la'
 alias ll='ls -l'
 alias lah='ls -lah'
