@@ -22,3 +22,10 @@ shopt -s checkwinsize   # Check the window size after each command, and update L
 if [[ -f ~/.ssh/known_hosts ]]; then
 	complete -o default -W "$(cat ~/.ssh/known_hosts | sed 's/[, ].*//' | sort | uniq | grep -v '[0-9]')" ssh scp sftp
 fi
+
+# virtualenvwrapper stuff
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+export WORKON_HOME=$HOME/.virtualenvs
+if [[ -e /usr/local/bin/virtualenvwrapper.sh ]] ; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
