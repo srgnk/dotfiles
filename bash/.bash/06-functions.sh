@@ -70,3 +70,25 @@ function ansible-vault-decrypt {
 
     ansible-vault decrypt --vault-password-file ~/.vault_pass "$1"
 }
+
+function git-delete-merged-branches {
+    [[ $1 == 'do' ]] && local dry='false' || local dry='true'
+
+    echo "dry = $dry"
+
+    git checkout master >/dev/null &&
+    git fetch --all -p &&
+
+    local untracked_branches=($(git branch -vv | grep ": gone]" | awk '{ print $1 }'))
+    local local_branches=($(git branch -vv | grep -v "\[origin\/" | awk '{ print $1 }'))
+
+    echo "Will delete untracked_branches:"
+    printf "%s\n" "${untracked_branches[@]}"
+
+    echo "Will delete local_branches:"
+    printf "%s\n" "${local_branches[@]}"
+
+    if [[ "$dry" == 'false' ]] ; then
+        git branch -D ${untracked_branches[*]} ${local_branches[*]}
+    fi
+}
