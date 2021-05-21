@@ -51,5 +51,7 @@
 	snapshots = !git stash list --grep snapshot
 [diff]
 	algorithm = patience
+[push]
+	default = current
 [include]
 	path = .gitconfig_local
