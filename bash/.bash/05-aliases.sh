@@ -46,3 +46,6 @@ alias manage-migrate='python manage.py migrate'
 alias manage-test='python manage.py test'
 alias manage-test-full='SUITE=FULL python manage.py test'
 alias manage-runserver='python manage.py runserver'
+
+# circleci
+alias validate-circleci-config='circleci config validate ../.circleci/config.yml'
