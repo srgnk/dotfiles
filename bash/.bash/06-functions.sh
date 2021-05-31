@@ -66,7 +66,7 @@ function restart-internet-card {
 
 function ansible-vault-decrypt {
     [[ -z "$1" ]] && echo "usage: $0 <file_to_decrypt>" && return 1
-    [[ ! -f '~/.vault_pass' ]] && echo '~/.vault_pass does not exist' && return 1
+    [[ ! -f ~/.vault_pass ]] && echo '~/.vault_pass does not exist' && return 1
 
     ansible-vault decrypt --vault-password-file ~/.vault_pass "$1"
 }
