@@ -41,12 +41,14 @@ link:
 	ln -fs $(DOTFILES_DIR)/bash/.bashrc $(HOME)/.bashrc
 	ln -fs $(DOTFILES_DIR)/bash/.bash_profile $(HOME)/.bash_profile
 	ln -fs $(DOTFILES_DIR)/vim/.vimrc $(HOME)/.vimrc
+	ln -fs $(DOTFILES_DIR)/liquidprompt/.liquidpromptrc $(HOME)/.liquidpromptrc
 
 unlink:
 	unlink $(HOME)/.bash
 	unlink $(HOME)/.bashrc
 	unlink $(HOME)/.bash_profile
 	unlink $(HOME)/.vimrc
+	unlink $(HOME)/.liquidpromptrc
 	@printf "\\033[32m✓\\033[0m Symlinks removed. Manually remove ~/dotfiles directory if needed.\\n"
 
 .PHONY: stow
@@ -60,3 +62,4 @@ stow:
 	stow git
 	stow tmux
 	stow vim
+	stow liquidprompt
