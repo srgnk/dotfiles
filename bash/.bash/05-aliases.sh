@@ -23,7 +23,7 @@ alias sapt='sudo apt'
 alias du_largest='du -sh -- * | sort -h'
 
 # git aliases
-alias gcm='git checkout master'
+alias gcm='git checkout master || git checkout main'
 alias gcb='git checkout -b'
 alias gc='git checkout'
 alias gs='git status'
