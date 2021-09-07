@@ -71,6 +71,13 @@ function ansible-vault-decrypt {
     ansible-vault decrypt --vault-password-file ~/.vault_pass "$1"
 }
 
+function ansible-vault-encrypt {
+    [[ -z "$1" ]] && echo "usage: $0 <file_to_encrypt>" && return 1
+    [[ ! -f ~/.vault_pass ]] && echo '~/.vault_pass does not exist' && return 1
+
+    ansible-vault encrypt --vault-password-file ~/.vault_pass "$1"
+}
+
 function git-delete-merged-branches {
     [[ $1 == 'do' ]] && local dry='false' || local dry='true'
 
