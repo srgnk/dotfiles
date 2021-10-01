@@ -26,6 +26,16 @@ fi
 # virtualenvwrapper stuff
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 export WORKON_HOME=$HOME/.virtualenvs
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 if [[ -e /usr/local/bin/virtualenvwrapper.sh ]] ; then
     source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+# pyenv
+if which pyenv-virtualenv-init > /dev/null; then
+    eval "$(pyenv init -)"
+fi
+
+if which pyenv-virtualenv-init > /dev/null; then
+    eval "$(pyenv virtualenv-init -)"
 fi
