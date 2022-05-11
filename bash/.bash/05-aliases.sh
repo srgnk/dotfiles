@@ -25,7 +25,7 @@ alias du_largest='du -sh -- * | sort -h'
 # git aliases
 alias gcm='git checkout master || git checkout main'
 alias gcb='git checkout -b'
-alias gc='git checkout'
+alias gc='git switch'
 alias gs='git status'
 alias gp='git pull'
 alias gl='git l'
