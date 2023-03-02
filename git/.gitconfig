@@ -54,5 +54,6 @@
 	algorithm = patience
 [push]
 	default = current
+	autoSetupRemote = true
 [include]
 	path = .gitconfig_local
