@@ -39,6 +39,7 @@ alias invim='env | grep vim'
 # python aliases
 alias pip-reinstall='pip3 install --force-reinstall -r ../requirements/local.txt'
 alias pip-upgrade-pip='python -m pip install --upgrade pip'
+alias rm-pyc='find . -name \*.pyc -delete'
 
 # django aliases
 alias manage='python manage.py'
