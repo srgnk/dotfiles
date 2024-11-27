@@ -23,7 +23,7 @@ if [[ -f ~/.ssh/known_hosts ]]; then
 	complete -o default -W "$(cat ~/.ssh/known_hosts | sed 's/[, ].*//' | sort | uniq | grep -v '[0-9]')" ssh scp sftp
 fi
 
-# virtualenvwrapper stuff
+# virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 export WORKON_HOME=$HOME/.virtualenvs
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
@@ -32,13 +32,18 @@ if [[ -e /usr/local/bin/virtualenvwrapper.sh ]] ; then
 fi
 
 # pyenv
-if which pyenv-virtualenv-init > /dev/null; then
-    eval "$(pyenv init -)"
-fi
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
-if which pyenv-virtualenv-init > /dev/null; then
+if which pyenv > /dev/null; then
+    eval "$(pyenv init --path)"
+    eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
+
+# poetry
+#export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
